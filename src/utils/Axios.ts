@@ -5,7 +5,7 @@ import axios, {
 } from 'axios'
 
 const instance: AxiosInstance = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: process.env.REACT_APP_API_URL,
 })
 
 instance.interceptors.request.use(

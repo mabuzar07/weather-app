@@ -1,6 +1,6 @@
 import Axios from './Axios'
 
-export const makeApiCall = async <T>(
+export const makeApiCall = async(
   method: 'get' | 'post' | 'put' | 'patch' | 'delete',
   route: string,
   data?: any
