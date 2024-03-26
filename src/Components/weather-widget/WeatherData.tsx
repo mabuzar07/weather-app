@@ -9,6 +9,7 @@ const WeatherData: React.FC<IWeatherProps> = ({
   forcastData,
   handleChangeLocation,
   setLocation,
+  location,
 }) => {
   return (
     <>
@@ -20,6 +21,7 @@ const WeatherData: React.FC<IWeatherProps> = ({
             }
             handleChangeLocation={handleChangeLocation}
             setLocation={setLocation}
+            location={location}
           />
           <FilterBar />
           {forcastData && <WeekilyView forecastdayData={forcastData} />}

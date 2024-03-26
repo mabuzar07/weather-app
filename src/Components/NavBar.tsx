@@ -1,47 +1,52 @@
 import React from 'react'
 import CountrySelect from './CountrySelect'
 import { useTheme } from '../hooks/ThemeProvider'
-import { LuLayoutDashboard,LuBell } from "react-icons/lu";
-import { CiSearch } from "react-icons/ci";
-import { FaMoon } from "react-icons/fa";
-import { CiLocationOn } from "react-icons/ci";
+import { LuLayoutDashboard, LuBell } from 'react-icons/lu'
+import { CiSearch } from 'react-icons/ci'
+import { FaMoon } from 'react-icons/fa'
+import { CiLocationOn } from 'react-icons/ci'
 
 interface INavBarProps {
-  
   locationName: string
   handleChangeLocation: (event: React.ChangeEvent<any>) => void
   setLocation: React.Dispatch<string>
+  location: string
 }
 
 const NavBar: React.FC<INavBarProps> = ({
   locationName,
   handleChangeLocation,
   setLocation,
+  location,
 }) => {
-  const { toggleTheme,darkMode } = useTheme()
+  const { toggleTheme, darkMode } = useTheme()
   return (
-    <div className={`navbar-main mb-30 ${!darkMode ? 'lightt'  : ''} `}>
+    <div className={`navbar-main mb-30 ${!darkMode ? 'lightt' : ''} `}>
       <div className="flex flex-wrap ">
         <div className="w-3/4 pr-4">
           <div className="left-container">
             <div className="left">
               <div className="icon">
-              <LuLayoutDashboard />
+                <LuLayoutDashboard />
               </div>
               <div className="icon">
-              <LuBell />
+                <LuBell />
               </div>
               <div className="location">
-              <CiLocationOn />
+                <CiLocationOn />
                 <div className="text">{locationName}</div>
               </div>
             </div>
             <div className="search-wrapper">
-              <span className='svg'> <CiSearch  /></span>
-             
+              <span className="svg">
+                {' '}
+                <CiSearch />
+              </span>
+
               <CountrySelect
                 handleChangeLocation={handleChangeLocation}
                 setLocation={setLocation}
+                location={location}
               />
             </div>
           </div>
@@ -51,7 +56,7 @@ const NavBar: React.FC<INavBarProps> = ({
             <div className="toggler">
               <input type="checkbox" name="" id="" onChange={toggleTheme} />
               <div className="circle">
-              <FaMoon />
+                <FaMoon />
               </div>
             </div>
             <div className="profile">

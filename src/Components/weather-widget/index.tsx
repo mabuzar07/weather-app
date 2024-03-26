@@ -8,9 +8,13 @@ const WeatherWidget = () => {
   const [location, setLocation] = useState(countries[0].label)
   const { data, isLoading, isError, refetch } = useWeatherApi(location)
   const handleChangeLocation = () => {
-    refetch().then(() => {})
+    refetch()
   }
-  useEffect(() => {}, [location])
+
+  useEffect(() => {
+    const intervalId = setInterval(handleChangeLocation, 60000) // 60000 milliseconds = 1 minute
+    return () => clearInterval(intervalId)
+  }, [])
   if (isLoading) return <Loader />
 
   if (isError) return <p>Something went wrong</p>
@@ -19,6 +23,7 @@ const WeatherWidget = () => {
     <WeatherData
       forcastData={data}
       handleChangeLocation={handleChangeLocation}
+      location={location}
       setLocation={setLocation}
     />
   )

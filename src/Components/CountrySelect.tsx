@@ -5,20 +5,27 @@ import Autocomplete from '@mui/material/Autocomplete'
 import { countries } from '../constants/countries'
 
 export interface CountrySelectProps {
-  handleChangeLocation: (event: React.ChangeEvent<any>) => void
+  handleChangeLocation: (
+    event: React.ChangeEvent<any>,
+    value: string | null
+  ) => void
   setLocation: React.Dispatch<string>
+  location: string
 }
 
 const CountrySelect: React.FC<CountrySelectProps> = ({
   handleChangeLocation,
   setLocation,
+  location,
 }) => {
   return (
     <Autocomplete
-      defaultValue={countries[0]}
+      defaultValue={countries.find(
+        (country: any) => country.label === location
+      )}
       onChange={(event, value) => {
         setLocation(value?.label || '')
-        handleChangeLocation(event)
+        handleChangeLocation(event, value?.label || null) // Pass the label or null as the second argument
       }}
       id="country-select-demo"
       sx={{ width: 300 }}
