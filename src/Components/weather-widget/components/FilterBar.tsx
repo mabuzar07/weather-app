@@ -10,7 +10,7 @@ const FilterBar = () => {
               <div className="day active">Next 5days</div>
             </div>
             <div className="toggle-buttons">
-              <button className="active">Forecast</button>
+              <span className="active">Forecast</span>
             </div>
           </div>
         </div>

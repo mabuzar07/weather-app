@@ -25,7 +25,7 @@ const WeatherData: React.FC<IWeatherProps> = ({
           />
           <FilterBar />
           {forcastData && <WeekilyView forecastdayData={forcastData} />}
-          <Overview forecastdayData={forcastData} />
+          <Overview forecastdayData={forcastData} location={location} />
         </div>
       </div>
     </>

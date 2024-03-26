@@ -1,12 +1,15 @@
 import React from 'react'
 import { WeatherApiResponse } from '../../../types/weatherType'
 import MajorCitiesWeather from './MajorCitiesWeather'
+import { countries } from '../../../constants/countries'
+import { CountryType } from '../../../types/countryTypes'
 
 interface IOverviewProps {
   forecastdayData: WeatherApiResponse
+  location: string
 }
 
-const Overview: React.FC<IOverviewProps> = ({ forecastdayData }) => {
+const Overview: React.FC<IOverviewProps> = ({ forecastdayData, location }) => {
   const [firstForcastDay] =
     forecastdayData?.forecast?.forecastday?.[0]?.hour || []
   return (
@@ -79,14 +82,21 @@ const Overview: React.FC<IOverviewProps> = ({ forecastdayData }) => {
             </div>
           </div>
           <div className="w-full md:w-4/12 pl-4 pr-4">
-            <div className="single-stat-map-wrapper">
-              <div className="data">
-                <div className="text">
-                  Explore global map of wind weather and ocean condition
+            <div className="map-point">
+              <div className="mapouter">
+                <div className="gmap_canvas">
+                  <iframe
+                    src={
+                      countries.find(
+                        (country: CountryType) => country.label === location
+                      )?.mapUrl
+                    }
+                    width="100%"
+                    className="w-full h-[525px]"
+                    id="gmap_canvas"
+                  ></iframe>
                 </div>
-                <button>GET STARTED</button>
               </div>
-              <img src="./images/img.png" alt="" />
             </div>
           </div>
         </div>

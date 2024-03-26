@@ -35,7 +35,7 @@ body{
   padding: 20px 0px;
 }
 .light {
-  background-color: #f8f9fe !important;
+  background-color: #ddd !important;
   color: #111015;
 }
 .light .navbar-main .left-container .left .icon {
@@ -61,7 +61,7 @@ body{
   border: none;
 
 }
-.light .dashboard .filter-top .toggle-buttons button.active {
+.light .dashboard .filter-top .toggle-buttons span.active {
   background-color: #fff;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border: none;
@@ -328,10 +328,10 @@ line-height: 24.38px;
 
 
 
-.dashboard .filter-top .toggle-buttons button {
+.dashboard .filter-top .toggle-buttons span {
   flex: 0 0 50%;
   border-radius: 50px;
-  height: 30px;
+  height: 35px;
   border: none;
   background-color: transparent;
   outline: none;
@@ -340,9 +340,12 @@ line-height: 24.38px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 11px;
+  font-size: 14px;
 }
-.dashboard .filter-top .toggle-buttons button.active {
+.map-point,.map-point iframe {
+  border-radius: 15px;
+}
+.dashboard .filter-top .toggle-buttons span.active {
   background-color: #BBD7EC;
   color: #1E1E1E;
   padding: 5px 10px;

@@ -1,7 +1,8 @@
 import React from 'react'
 import { HourlyWeather, WeatherApiResponse } from '../../../types/weatherType'
 import WeatherChart from './WeatherChart'
-import moment from 'moment-timezone';
+import moment from 'moment-timezone'
+import { getWeatherIcons } from '../../../utils/getWeatherIcons'
 interface IForcastDayView {
   forecastdayData: WeatherApiResponse
 }
@@ -56,18 +57,26 @@ const ForcastDayView: React.FC<IForcastDayView> = ({ forecastdayData }) => {
         <div className="w-full md:w-1/2 pl-4">
           <div className="flex  gap-2.5">
             {forecastdayData?.forecast?.forecastday[0]?.hour
-              .slice(0, 5)
-              .map((hour: HourlyWeather, index: number) => (
-                <div className="w-1/6" key={index}>
-                  <div className=" day-stat-wrapper">
-                    <div className="day">{moment.utc(hour.time).local().format('HH:mm')}</div>
-                    <span className="text-white">{hour?.condition?.text}</span>
-                    <div className="temp">
-                      {hour.temp_c} <span>o</span>{' '}
+              .slice(0, 6)
+              .map((hour: HourlyWeather, index: number) => {
+                return (
+                  <div className="w-1/6" key={index}>
+                    <div className=" day-stat-wrapper">
+                      <div className="day">
+                        {moment.utc(hour.time).local().format('HH:mm')}
+                      </div>
+                      <img
+                        /* @ts-ignore */
+                        src={getWeatherIcons(`${hour.condition.text.trim()}`)}
+                        alt="Weather icon"
+                      />
+                      <div className="temp">
+                        {hour.temp_c} <span>o</span>{' '}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
           </div>
         </div>
         <div className="w-full md:w-1/4 pr-4 pl-4">
