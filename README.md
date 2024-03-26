@@ -26,6 +26,6 @@ While the current version of the application fetches data every minute to ensure
 
 Experience the power of live weather data with our _Live Weather Dashboard_! Stay informed and stay ahead of the weather.
 
-For any questions or feedback, please contact us at [email@example.com](mailto:email@example.com).
+For any questions or feedback, please contact us at [mabuzarali1995@gmail.com](mailto:mabuzarali1995@gmail.com).
 
 Happy exploring! 🌈
