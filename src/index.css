@@ -23,7 +23,12 @@ code {
 }
 body{
   font-family: "Montserrat", sans-serif !important;
+}
+.dark{
   background-color: #111015 !important;
+}
+.light{
+  background-color: #a4a4a5 !important;
 }
 .mb-30 {
   margin-bottom: 30px;
@@ -89,7 +94,8 @@ body.light .all-cities-wrapper .city .data .title-white ,body.light .single-stat
 }
 .navbar-main {
   
-  padding: 10px 0px;
+  padding: 10px 50px;
+  border-radius: 15px;
 }
 .navbar-main .left-container {
   display: flex;
@@ -262,7 +268,6 @@ line-height: 24.38px;
   display: flex;
   background-color:#1E1E1E;
   font-weight: 500;
-  width: 163px;
   align-items: center;
 }
 /* Rectangle 3 */
@@ -271,7 +276,7 @@ line-height: 24.38px;
 
 .dashboard .filter-top .toggle-buttons button {
   flex: 0 0 50%;
-  border-radius: 30px;
+  border-radius: 50px;
   height: 30px;
   border: none;
   background-color: transparent;

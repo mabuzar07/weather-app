@@ -1,111 +1,80 @@
 import React from 'react'
+import { HourlyWeather, WeatherApiResponse } from '../../../types/weatherType'
+import WeatherChart from './WeatherChart'
 
-const WeekilyView = () => {
+interface IForcastDayView {
+  forecastdayData: WeatherApiResponse
+}
+
+const ForcastDayView: React.FC<IForcastDayView> = ({ forecastdayData }) => {
+  const firstAstro = forecastdayData?.forecast?.forecastday?.[0]?.astro || {}
   return (
     <div className="days-stats mb-30">
       <div className="flex flex-wrap ">
         <div className="w-full md:w-1/4 pr-4 pl-4">
           <div className="today-stat">
             <div className="header">
-              <span>Friday</span>
-              <span>11:45 AM</span>
+              <span>{forecastdayData?.current?.condition?.text}</span>
+              <span>{forecastdayData?.current?.last_updated}</span>
             </div>
             <div className="content">
               <div className="top mb-1">
                 <div className="text">
-                  16 <span>0</span>
+                  {forecastdayData?.current?.feelslike_c} <span>0</span>
                 </div>
-                <img src="./images/daystat.png" alt="" />
+                <img src={forecastdayData?.current?.condition?.icon} alt="" />
               </div>
               <div className="text-small mb-1">
                 Real Feel{' '}
                 <span>
-                  18 <span>0</span>
+                  {forecastdayData?.current?.temp_c}
+                  <span>0</span>
                 </span>
               </div>
               <div className="text-small-flex mb-1">
                 <div className="text-small">
-                  Wind N-E. <span>6-7km/h</span>
+                  Wind N-E. <span>{forecastdayData?.current?.wind_kph}</span>
                 </div>
                 <div className="text-small">
-                  Sunrise <span>5:30AM</span>
+                  Sunrise <span>{firstAstro?.sunrise}</span>
                 </div>
               </div>
               <div className="text-small-flex mb-1">
                 <div className="text-small">
-                  Pressure <span>100MB</span>
+                  Pressure <span>{forecastdayData?.current?.pressure_mb}</span>
                 </div>
                 <div className="text-small">
-                  Sunset <span>6:45</span>
+                  Sunset <span>{firstAstro?.sunset}</span>
                 </div>
               </div>
               <div className="text-small mb-1">
-                Humidity <span>51% </span>
+                Humidity <span>{forecastdayData?.current?.humidity} </span>
               </div>
             </div>
           </div>
         </div>
         <div className="w-full md:w-1/2 pl-4">
           <div className="flex  gap-2.5">
-            <div className="w-1/6">
-              <div className="day-stat-wrapper">
-                <div className="day">SUN</div>
-                <img src="./images/rainy.png" alt="" />
-                <div className="temp">
-                  15 <span>o</span>{' '}
+            {forecastdayData?.forecast?.forecastday[0]?.hour
+              .slice(0, 5)
+              .map((hour: HourlyWeather, index: number) => (
+                <div className="w-1/6" key={index}>
+                  <div className=" day-stat-wrapper">
+                    <div className="day">{hour.time}</div>
+                    <span className="text-white">{hour?.condition?.text}</span>
+                    <div className="temp">
+                      {hour.temp_c} <span>o</span>{' '}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="w-1/6">
-              <div className="day-stat-wrapper">
-                <div className="day">MON</div>
-                <img src="./images/rain1.png" alt="" />
-                <div className="temp">
-                  11 <span>o</span>{' '}
-                </div>
-              </div>
-            </div>
-            <div className="w-1/6">
-              <div className="day-stat-wrapper">
-                <div className="day">TUE</div>
-                <img src="./images/rain2.png" alt="" />
-                <div className="temp">
-                  10 <span>o</span>{' '}
-                </div>
-              </div>
-            </div>
-            <div className="w-1/6">
-              <div className="day-stat-wrapper">
-                <div className="day">WED</div>
-                <img src="./images/rain3.png" alt="" />
-                <div className="temp">
-                  12 <span>o</span>{' '}
-                </div>
-              </div>
-            </div>
-            <div className="w-1/6">
-              <div className="day-stat-wrapper">
-                <div className="day">THU</div>
-                <img src="./images/rain4.png" alt="" />
-                <div className="temp">
-                  10 <span>o</span>{' '}
-                </div>
-              </div>
-            </div>
-            <div className="w-1/6">
-              <div className="day-stat-wrapper">
-                <div className="day">SAT</div>
-                <img src="./images/rain5.png" alt="" />
-                <div className="temp">
-                  10 <span>o</span>{' '}
-                </div>
-              </div>
-            </div>
+              ))}
           </div>
         </div>
         <div className="w-full md:w-1/4 pr-4 pl-4">
           <div className="graph">
-            <img src="./images/chance.png" alt="" />
+            <WeatherChart
+              hourlyData={forecastdayData?.forecast?.forecastday[0]?.hour}
+            />
           </div>
         </div>
       </div>
@@ -113,4 +82,4 @@ const WeekilyView = () => {
   )
 }
 
-export default WeekilyView
+export default ForcastDayView

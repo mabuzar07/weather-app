@@ -1,8 +1,21 @@
 import React from 'react'
+import CountrySelect from './CountrySelect'
+import { useTheme } from '../hooks/ThemeProvider'
 
-const NavBar = () => {
+interface INavBarProps {
+  locationName: string
+  handleChangeLocation: (event: React.ChangeEvent<any>) => void
+  setLocation: React.Dispatch<string>
+}
+
+const NavBar: React.FC<INavBarProps> = ({
+  locationName,
+  handleChangeLocation,
+  setLocation,
+}) => {
+  const { toggleTheme } = useTheme()
   return (
-    <div className="navbar-main mb-30">
+    <div className="navbar-main mb-30 bg-gray-500 ">
       <div className="flex flex-wrap ">
         <div className="w-3/4 pr-4">
           <div className="left-container">
@@ -15,19 +28,21 @@ const NavBar = () => {
               </div>
               <div className="location">
                 <img src="./images/pin.png" alt="" />
-                <div className="text">Dhaka,Bangladesh</div>
+                <div className="text">{locationName}</div>
               </div>
             </div>
-            <div className="search-wrapper">
-              <img src="./images/search.png" alt="" />
-              <input type="text" name="" placeholder="Search City" />
+            <div className="">
+              <CountrySelect
+                handleChangeLocation={handleChangeLocation}
+                setLocation={setLocation}
+              />
             </div>
           </div>
         </div>
         <div className="w-1/4">
           <div className="right-wrapper">
             <div className="toggler">
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="" id="" onChange={toggleTheme} />
               <div className="circle">
                 <img src="./images/togl.png" alt="" />
               </div>

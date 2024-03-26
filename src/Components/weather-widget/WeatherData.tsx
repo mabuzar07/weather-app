@@ -3,16 +3,27 @@ import NavBar from '../NavBar'
 import FilterBar from './components/FilterBar'
 import WeekilyView from './components/WeekilyView'
 import Overview from './components/Overview'
+import { IWeatherProps } from './types'
 
-const WeatherData = () => {
+const WeatherData: React.FC<IWeatherProps> = ({
+  forcastData,
+  handleChangeLocation,
+  setLocation,
+}) => {
   return (
     <>
       <div className="dashboard">
         <div className="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 px-4">
-          <NavBar />
+          <NavBar
+            locationName={
+              forcastData?.location?.name || forcastData?.location?.region || ''
+            }
+            handleChangeLocation={handleChangeLocation}
+            setLocation={setLocation}
+          />
           <FilterBar />
-          <WeekilyView />
-          <Overview />
+          {forcastData && <WeekilyView forecastdayData={forcastData} />}
+          <Overview forecastdayData={forcastData} />
         </div>
       </div>
     </>

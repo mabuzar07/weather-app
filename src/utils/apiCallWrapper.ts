@@ -7,7 +7,7 @@ export const makeApiCall = async(
 ) => {
   try {
     const response = await Axios[method](route, data)
-    return response.data.data
+    return response.data
   } catch (error: any) {
     if (error?.response?.data?.error) {
       throw { success: false, message: error.response.data.error?.msg }

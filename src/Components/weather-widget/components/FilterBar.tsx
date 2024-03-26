@@ -7,13 +7,10 @@ const FilterBar = () => {
         <div className="w-full md:w-3/4 pr-4 pl-4">
           <div className="filter-left">
             <div className="days">
-              <div className="day">Today</div>
-              <div className="day">Tomorrow</div>
-              <div className="day active">Next 7days</div>
+              <div className="day active">Next 5days</div>
             </div>
             <div className="toggle-buttons">
               <button className="active">Forecast</button>
-              <button>Air Quality</button>
             </div>
           </div>
         </div>

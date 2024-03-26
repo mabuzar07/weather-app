@@ -1,21 +1,16 @@
-import React from 'react'
 import './App.css'
-import Button from '@mui/material/Button'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import WeatherWidget from './Components/weather-widget'
+import { useTheme } from './hooks/ThemeProvider'
 
 function App() {
   const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        retryDelay: (attemptIndex) => Math.min(1000 * 2 * attemptIndex, 30000),
-      },
-    },
+    defaultOptions: {},
   })
-  // getWeatherCurrentData()
+  const { darkMode } = useTheme()
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App">
+      <div className={darkMode ? 'dark' : 'light'}>
         <WeatherWidget />
       </div>
     </QueryClientProvider>
