@@ -1,7 +1,7 @@
 import React from 'react'
 import { HourlyWeather, WeatherApiResponse } from '../../../types/weatherType'
 import WeatherChart from './WeatherChart'
-
+import moment from 'moment-timezone';
 interface IForcastDayView {
   forecastdayData: WeatherApiResponse
 }
@@ -60,7 +60,7 @@ const ForcastDayView: React.FC<IForcastDayView> = ({ forecastdayData }) => {
               .map((hour: HourlyWeather, index: number) => (
                 <div className="w-1/6" key={index}>
                   <div className=" day-stat-wrapper">
-                    <div className="day">{hour.time}</div>
+                    <div className="day">{moment.utc(hour.time).local().format('HH:mm')}</div>
                     <span className="text-white">{hour?.condition?.text}</span>
                     <div className="temp">
                       {hour.temp_c} <span>o</span>{' '}

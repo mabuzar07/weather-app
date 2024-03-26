@@ -27,69 +27,78 @@ body{
 .dark{
   background-color: #111015 !important;
 }
-.light{
-  background-color: #a4a4a5 !important;
-}
+
 .mb-30 {
   margin-bottom: 30px;
 }
 .dashboard {
   padding: 20px 0px;
 }
-body.light {
-  background-color: #f5f5f5 !important;
+.light {
+  background-color: #f8f9fe !important;
   color: #111015;
 }
-body.light .navbar-main .left-container .left .icon {
-  background-color: #bbd7ec;
+.light .navbar-main .left-container .left .icon {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-body.light .navbar-main .left-container .left .icon svg {
+.light .navbar-main .left-container .left .icon svg {
   color: #111015;
 }
-body.light .navbar-main .left-container .left .location .text {
+.light .navbar-main .left-container .left .location .text {
   color: #111015;
 }
-body.light .navbar-main .left-container .search-wrapper input {
-  background-color: #bbd7ec;
+.light .navbar-main .left-container .search-wrapper input {
+  
   color: #111015;
 }
-body.light::placeholder {
+.light::placeholder {
   color: #111015;
 }
-body.light .navbar-main .right-wrapper .toggler {
-  background-color: #bbd7ec;
+.light .navbar-main .right-wrapper .toggler {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: none;
 
 }
-body.light .navbar-main .right-wrapper .toggler .circle {
+.light .dashboard .filter-top .toggle-buttons button.active {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: none;
+  outline: none;
+}
+.light .navbar-main .right-wrapper .toggler .circle {
   background-color: #111015;
 }
-body.light .navbar-main .right-wrapper .toggler .circle svg {
+.light .navbar-main .right-wrapper .toggler .circle svg {
   color: #111015;
 }
-body.light .dashboard .filter-top .filter-left .days .day {
+.light .dashboard .filter-top .filter-left .days .day {
   color: #444;
 }
-body.light .dashboard .filter-top .filter-left .days .day.active {
+.light .dashboard .filter-top .filter-left .days .day.active {
   color: #111015;
 }
-body.light .dashboard .filter-top .filter-right-title {
+.light .dashboard .filter-top .filter-right-title {
   color: #111015;
 }
-body.light .days-stats .day-stat-wrapper {
-  background-color:#bbd7ec;
+.light .days-stats .day-stat-wrapper {
+  background-color:#fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-body.light .days-stats .day-stat-wrapper .day {
+.light .days-stats .day-stat-wrapper .day {
   color: #111015;
 }
-body.light .days-stats .day-stat-wrapper .temp {
+.light .days-stats .day-stat-wrapper .temp {
   color: #111015;
 }
-body.light .single-stat,body.light .all-cities-wrapper .city {
-  background-color: #bbd7ec;
+.light .single-stat,.light .all-cities-wrapper .city {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-body.light .single-stat .title,body.light .single-stat .flex-item .text ,.body.light .single-stat .flex-item .text,
-body.light .single-stat .flex-center .text ,body.light .all-cities-wrapper .city .data .title-small ,body.light .all-cities-wrapper .city .data .title,
-body.light .all-cities-wrapper .city .data .title-white ,body.light .single-stat .flex-item .text-small {
+.light .single-stat .title,.light .single-stat .flex-item .text ,..light .single-stat .flex-item .text,
+.light .single-stat .flex-center .text ,.light .all-cities-wrapper .city .data .title-small ,.light .all-cities-wrapper .city .data .title,
+.light .all-cities-wrapper .city .data .title-white ,.light .single-stat .flex-item .text-small {
   color: #111015;
 }
 .navbar-main {
@@ -137,6 +146,9 @@ body.light .all-cities-wrapper .city .data .title-white ,body.light .single-stat
   color: white;
   font-size: 24px;
 }
+.light .navbar-main .left-container .left .location svg {
+  color: #111015;
+}
 .navbar-main .left-container .left .location .text {
  
 font-size: 16px;
@@ -147,10 +159,46 @@ color: white;
 }
 .navbar-main .left-container .search-wrapper {
   position: relative;
+}
+.navbar-main .left-container .search-wrapper .svg svg {
+  position: absolute;
+  left: 15px;
+  top: 19px;
+  font-size: 24px;
+  color: #fff;
+  z-index: 99;
+}
+.navbar-main .left-container .css-84nhb1-MuiAutocomplete-root {
+  position: relative;
   width: 480px;
   background-color: #1B1B1D;
-  height: 46px;
+  
   border-radius: 10px;
+  color: white;
+  border: none;
+}
+.light .navbar-main .left-container .css-84nhb1-MuiAutocomplete-root {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
+.navbar-main .left-container .css-84nhb1-MuiAutocomplete-root  input {
+  background-color: transparent;
+  color: white;
+  padding-left: 60px;
+}
+.light .navbar-main .left-container .css-84nhb1-MuiAutocomplete-root input {
+  color: #111015;
+}
+.navbar-main .left-container .css-84nhb1-MuiAutocomplete-root  input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  display: none !important;
 }
 .navbar-main .right-wrapper {
   display: flex;
@@ -169,8 +217,8 @@ color: white;
   border-radius: 50%;
 }
 .navbar-main .right-wrapper .toggler {
-  height: 42px;
-  width: 115px;
+  height: 36px;
+  width: 80px;
   background-color: #19191B;
   border: 1px solid #626161;
   border-radius: 20px;
@@ -197,8 +245,8 @@ color: white;
 }
 .navbar-main .right-wrapper .toggler .circle {
   position: absolute;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   transition: all 0.3s ease-in-out;
   top: 3px;
   background-color: white;
@@ -208,17 +256,20 @@ color: white;
   justify-content: center;
   align-items: center;
 }
-.navbar-main .right-wrapper .toggler .circle img ,.circle svg{
+.navbar-main .right-wrapper .toggler .circle img ,.navbar-main .right-wrapper .toggler .circle svg{
   width: 20px;
   height: 20px;
   object-fit: contain;
-  color: white;
+  color: #111015;
   font-size: 20px;
 }
 ::placeholder{
   color: white;
 }
-.navbar-main .left-container .search-wrapper img,.navbar-main .left-container .search-wrapper svg {
+.light .navbar-main .right-wrapper .toggler .circle svg  {
+  color: #fff;
+}
+.navbar-main .left-container .search-wrapper img{
   width: 20px;
   font-size: 20px;
   color: white;
@@ -227,14 +278,17 @@ color: white;
   left: 10px;
   top: 10px;
 }
+.light .navbar-main .left-container .search-wrapper .svg svg {
+  color: black;
+}
 .navbar-main .left-container .search-wrapper input {
-height: 46px;
+
 background-color: transparent;
 border-radius: 10px;
 padding: 10px;
 outline: none;
 border: none;
-padding-left: 60px;
+padding-left: 40px;
 width: 100%;
 
 }
@@ -266,7 +320,7 @@ line-height: 24.38px;
   border-radius: 30px;
   height: 30px;
   display: flex;
-  background-color:#1E1E1E;
+ 
   font-weight: 500;
   align-items: center;
 }
@@ -291,6 +345,7 @@ line-height: 24.38px;
 .dashboard .filter-top .toggle-buttons button.active {
   background-color: #BBD7EC;
   color: #1E1E1E;
+  padding: 5px 10px;
 }
 .dashboard .filter-top .filter-right-title{
 
@@ -310,6 +365,10 @@ color: white;
 height: 226px;
   background: #1E1E1E;
   max-width: 90px;
+  transition: all 0.3s ease-in-out;
+}
+.days-stats .day-stat-wrapper:hover {
+  transform: scale(1.04);
 }
 .days-stats .day-stat-wrapper .day {
   font-family: Montserrat;
@@ -339,6 +398,13 @@ color: #E5E5E5;
   margin: 5px auto;
   
 }
+.days-stats .day-stat-wrapper .text-white {
+  font-size: 12px;
+  text-align: center;
+}
+.light .days-stats .day-stat-wrapper .text-white {
+  color: #111015;
+}
 .days-stats .day-stat-wrapper .temp span {
   position: absolute;
   top: -16px;
@@ -348,6 +414,19 @@ color: #E5E5E5;
 .days-stats .day-stat-wrapper .graph {
   height: 226px;
   width: 100%;
+  
+ 
+}
+.graph {
+  transition: all 0.3s ease-in-out;
+}
+ .graph:hover {
+  transform: scale(1.04);
+}
+.light .days-stats .graph {
+  
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
  
 }
 .days-stats .day-stat-wrapper .graph img{
@@ -360,6 +439,10 @@ color: #E5E5E5;
   min-height: 226px;
   border-radius: 25px;
   background: #bbd7ec;
+}
+.light .days-stats .today-stat {
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .days-stats  .today-stat .header {
   height: 56px;
@@ -431,10 +514,42 @@ color: #4F5658;
   right: -6px;
   font-size: 8px;
 }
+.days-stats .graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1B1B1D;
+  border-radius: 15px;
+  height: 226px;
+}
+.css-10vg0a6-MuiResponsiveChart-container {
+  width: 100%;
+  height: auto;
+}
+.days-stats .graph .css-1k2u9zb-MuiChartsAxis-root .MuiChartsAxis-tickLabel {
+  color: white;
+  fill: white;
+}
+.light .days-stats .css-1k2u9zb-MuiChartsAxis-root .MuiChartsAxis-tickLabel  {
+  color: #111015;
+  fill: #111015;
+}
+.css-1k2u9zb-MuiChartsAxis-root .MuiChartsAxis-line {
+  stroke: white !important;
+}
+.light .css-1k2u9zb-MuiChartsAxis-root .MuiChartsAxis-line {
+  stroke: #111015 !important;
+}
 .days-stats .today-stat .content .text-small-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.days-stats .today-stat {
+  transition: all 0.3s ease-in-out;
+}
+.days-stats .today-stat:hover {
+  transform: scale(1.04);
 }
 .dashboard .title-main {
   
@@ -444,6 +559,9 @@ line-height: 24.38px;
 text-align: left;
 color: #FFFFFF;
 
+}
+.light .dashboard .title-main {
+  color: #111015;
 }
 .all-cities-top {
   display: flex;
@@ -478,7 +596,11 @@ color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  transition: all 0.3s ease-in-out;
  
+}
+.single-stat:hover {
+  transform: scale(1.04);
 }
 .single-stat .title {
  
@@ -487,6 +609,9 @@ font-weight: 500;
 line-height: 19.5px;
 
 color: #FFFFFF;
+}
+.light .single-stat .title {
+  color: #111015;
 }
 .single-stat img {
   width: 100%;
@@ -526,6 +651,9 @@ color: #f5f5f5;
 .single-stat .flex-item .text span {
 font-size: 14px;
 }
+.light .single-stat .flex-item .text , .light .single-stat .flex-item .text-small , .light .single-stat .flex-center .text{
+  color: #111015;
+}
 .single-stat .flex-center {
   display: flex;
   justify-content: center;
@@ -542,9 +670,13 @@ color: white;
   font-weight: 400;
 }
 .single-stat-map-wrapper {
-  height: 514px;
+  height: 520px;
   border-radius: 15px;
   position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.single-stat-map-wrapper:hover {
+  transform: scale(1.04);
 }
 .single-stat-map-wrapper img {
   height: 100%;

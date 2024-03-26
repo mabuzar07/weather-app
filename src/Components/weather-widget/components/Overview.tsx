@@ -11,11 +11,11 @@ const Overview: React.FC<IOverviewProps> = ({ forecastdayData }) => {
     forecastdayData?.forecast?.forecastday?.[0]?.hour || []
   return (
     <div className="flex flex-wrap justify-between">
-      <div className="w-full md:w-3/4 pr-4 pl-4">
+      <div className="w-full md:w-4/4 pr-4 pl-4">
         <div className="title-main mb-3">Today's Overview</div>
         <div className="flex flex-wrap ">
-          <div className="w-full md:w-3/5 ">
-            <div className="flex flex-wrap justify-between gap-4">
+          <div className="w-full md:w-8/12 ">
+            <div className="flex flex-wrap  gap-y-5 gap-x-10">
               <div className="w-1/2 single-stat-wrapper mb-4">
                 <div className="single-stat">
                   <div className="title">Wind Status</div>
@@ -78,7 +78,7 @@ const Overview: React.FC<IOverviewProps> = ({ forecastdayData }) => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-2/5 pl-4 pr-4">
+          <div className="w-full md:w-4/12 pl-4 pr-4">
             <div className="single-stat-map-wrapper">
               <div className="data">
                 <div className="text">

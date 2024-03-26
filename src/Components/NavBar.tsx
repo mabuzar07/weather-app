@@ -1,8 +1,13 @@
 import React from 'react'
 import CountrySelect from './CountrySelect'
 import { useTheme } from '../hooks/ThemeProvider'
+import { LuLayoutDashboard,LuBell } from "react-icons/lu";
+import { CiSearch } from "react-icons/ci";
+import { FaMoon } from "react-icons/fa";
+import { CiLocationOn } from "react-icons/ci";
 
 interface INavBarProps {
+  
   locationName: string
   handleChangeLocation: (event: React.ChangeEvent<any>) => void
   setLocation: React.Dispatch<string>
@@ -13,25 +18,27 @@ const NavBar: React.FC<INavBarProps> = ({
   handleChangeLocation,
   setLocation,
 }) => {
-  const { toggleTheme } = useTheme()
+  const { toggleTheme,darkMode } = useTheme()
   return (
-    <div className="navbar-main mb-30 bg-gray-500 ">
+    <div className={`navbar-main mb-30 ${!darkMode ? 'lightt'  : ''} `}>
       <div className="flex flex-wrap ">
         <div className="w-3/4 pr-4">
           <div className="left-container">
             <div className="left">
               <div className="icon">
-                <img src="./images/dashboard.png" alt="" />
+              <LuLayoutDashboard />
               </div>
               <div className="icon">
-                <img src="./images/bell.png" alt="" />
+              <LuBell />
               </div>
               <div className="location">
-                <img src="./images/pin.png" alt="" />
+              <CiLocationOn />
                 <div className="text">{locationName}</div>
               </div>
             </div>
-            <div className="">
+            <div className="search-wrapper">
+              <span className='svg'> <CiSearch  /></span>
+             
               <CountrySelect
                 handleChangeLocation={handleChangeLocation}
                 setLocation={setLocation}
@@ -44,7 +51,7 @@ const NavBar: React.FC<INavBarProps> = ({
             <div className="toggler">
               <input type="checkbox" name="" id="" onChange={toggleTheme} />
               <div className="circle">
-                <img src="./images/togl.png" alt="" />
+              <FaMoon />
               </div>
             </div>
             <div className="profile">
